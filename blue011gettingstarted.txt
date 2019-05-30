@@ -1,0 +1,76 @@
+This document helps developers to get started to issue and accept payment messages on DASH blockchain.
+
+The developer has to follow following steps
+
+A-1) Developer-setup
+- Developer creates two products BLUE011_Issuer, BLUE011_Consumer
+- BLUE011 indicates the group to process message (Issuer and Consumer )
+- In BLUE011_example_issuer_mobile sample provided, the developer enters the API-key 
+- In BLUE011_example_consumer_mobile sample provided, the developer enters the API-key 
+
+A-2) Developer implementing issue message
+
+- Developer prepares issuing message (as in Developer-setup)
+- Developer loads crypto-money from users-wallet into blockchain-address of message
+- Developer can use this message in his features
+
+
+A-3) Developer implementing consume message
+
+- Developer prepares consuming message (as in Developer-setup)
+- Developer accepts the message and PIN.
+- Developer identifies to which account the crypto-money has to be credited.
+-- It could be users-wallet address or developers-address
+- Developer calls REST api to accept funds by passing proper parameters.
+- Crypto-money will be credited to blockchain address provided
+- Developer can display the crypto-money received
+
+The user experience the developer can provide is as follows    
+
+User experience in mobile wallet
+B-1) User experience sending money as message
+- User-A has a mobile wallet with "crypto money"
+- User-A issues messages "in his mobile app" with a specific amount of money in that. It is protected by PIN
+- User-A sends this message to User-B, by email or whatsapp.
+
+B-2) User experience receiving money as message
+- User-B accepts message "in his mobile app". 
+- User-B enters PIN and accepts payment in his wallet.
+- User-B receives crypto-money in his mobile wallet. 
+
+User experience in ATM and mobile-wallet
+B-1) User receiving payment as message in ATM instead of CASH
+- User-A goes to ATM and enters amount of money(100$) to receive.
+- ATM prints the Payment message in a coupon. It send PIN by SMS to User-A.
+
+B-2) User experience spending the coupon in retail store.
+- User-A submits the coupon to a retail store accepting DASH crypto
+- Retail store scans the coupon, provided. 
+- Retail store asks User-A enters PIN 
+- The money in coupon is transfered to retail store
+- The User-A has spent the coupon at retail store
+
+To compare other payment mechanisms with above method
+- Using standard Bitcoin, Dash, Litecoin, Bitcoincash the transfer has to be done directly to receivers blockchain-address.
+- It cannot be sent as message
+- It cannot be sent in email, whatsapp with flexibility
+- Using ethereum, it requires maintenance of smart-contract
+- Using stellar, ripple limitation is similar to bitcoin.
+- Using hyperledger we are not sure.
+
+The developer package needed to implement this is 
+- BLUE011_Issuer
+- BLUE011_Consumer
+
+BLUE011_Issuer, helps in issuing payment messages.
+BLUE011_Consumer, helps in consuming payment messages.
+
+Notes:
+1) These are one time use messages. It cannot be used and should not be used more than once, as data will be visible in public blockchain.
+
+2) The PIN, Uid, Json data will be visible in public after transaction is executed.
+3) The protection of PIN data will be available in other products.
+
+
+
+

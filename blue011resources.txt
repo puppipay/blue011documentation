@@ -1,0 +1,83 @@
+
+A) Testnet
+
+A-1) Creating DASH testnet wallet
+
+You can create wallet here 
+https://testnet1.puppipay.com
+
+You can also use any other DASH testnet wallet
+
+A-2) Loading testnet wallet with testcoins
+
+It can be loaded from one of the link below
+
+http://test.faucet.masternode.io/
+http://faucet.test.dash.crowdnode.io/
+
+A-3) Verifying transaction in blockchain
+
+The transactions reported can be verified using following links
+
+https://testnet-insight.dashevo.org/insight/
+http://insight.test.dash.crowdnode.io/
+
+A-4) Node to broadcast
+
+Broadcasting the transaction can be done in link below
+
+https://testnet-insight.dashevo.org/insight-api
+
+B) Livenet
+
+B-1) Creating DASH livenet wallet
+
+You can create wallet here 
+https://puppipay.com
+
+You can also use any other DASH wallet
+
+B-2) Loading livenet DASH address
+
+-> You need to buy DASH from vendors
+
+B-3) Verifying transaction in blockchain
+
+Transactions executed in DASH livenet can be verified in below link
+https://insight.dashevo.org/insight/
+
+B-4) Node to broadcast
+
+Livenet DASH transactions can be broadcast in below link
+
+https://insight.dashevo.org/insight-api
+
+
+C )
+
+C-1) Creating address, wif from random string
+
+var hex2 = Buffer.from('1zzttyyzzzzzzzzzzzzzzzzzzzzzzzzz') ; //'8080808080808080808080808080808080808080808080808080808080808080';
+
+var privateKey = new bitcore.PrivateKey(hex2, network);
+
+
+var wif = privateKey.toWIF();
+
+var addr = privateKey.toAddress();
+
+C-2) Sending money from a address using privateKey.
+
+-> get spendable inputs (inputs)
+-> create outputs to send (outputs)
+-> changeaddress is place to deposit small change left out
+
+ var tx = bitcore.Transaction( )
+        .from(inputs)
+        .to(outputs)
+        .change(changeaddress)
+        .sign(privateKey );
+
+Once above is done, broadcast to network
+example here: https://testnet-insight.dashevo.org/insight-api/tx/send
+
