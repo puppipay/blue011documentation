@@ -8,6 +8,7 @@ It can be used with loyalty coupons, where the **COUPONS** can be issued with mo
 Settlement happens in DASH blockchain in about 6 minutes.
 
 Other usecases
+- Revertible payments on blockchain.
 - Point of Sale terminals can issue coupons.
 - Mobile wallets can send payments as message.
 - ATMs can issue coupons if they don't have cash.
