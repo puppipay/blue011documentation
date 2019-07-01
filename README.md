@@ -1,7 +1,7 @@
 
-# Message based Blockchain Payment Solution (BLUE011)
+# Message contract based Blockchain Payment Solution (BLUE011)
 
-A message based payment solution using DASH blockchain. It can be used by calling a REST-api.
+A message contract based payment solution using DASH blockchain. It can be used by calling a REST-api.
 
 It can be used with loyalty coupons, where the **COUPONS** can be issued with money present in coupon protected by a **PIN** . The receiver of coupon can accept payment in his wallet by providing the **PIN**.
 
